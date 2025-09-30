@@ -6,10 +6,11 @@ import hospitalPng from "@/assets/img/hospital.png";
 import practitionerIcon from "@/assets/img/practitioner.png";
 import PhoneIcon from "@/components/icons/PhoneIcon";
 import LocationIcon from "@/components/icons/LocationIcon";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function Map({ isProfessionnal }) {
   const itemRefs = useRef({});
+    const markerRefs = useRef({});
   const scrollToItem = (id) => {
     const el = itemRefs.current[id];
     if (el) {
@@ -22,12 +23,21 @@ function Map({ isProfessionnal }) {
     }
   };
 
-  const mapRef = useRef();
+  const [map, setMap] = useState(null);
 
   // fonction utilitaire : recentre la map
-  const recenterMap = (lat, lng) => {
-    mapRef.current?.setView([lat, lng], 13);
-    console.log(mapRef)
+  const recenterMap = (item, article) => {
+     Object.values(itemRefs.current).forEach((element) => {
+        element.classList.remove("highlight");
+      });
+  article.classList.add("highlight");
+  article.scrollIntoView({ behavior: "smooth", block: "start" });
+    map.flyTo([item.lat, item.lng], 13, {animate: false});
+    const marker = markerRefs.current[item.id];
+      if (marker) {
+        marker.openPopup();
+      }
+    
   };
 
   const centerIcon = new Icon({
@@ -47,7 +57,7 @@ function Map({ isProfessionnal }) {
             key={item.id}
             className="card"
             ref={(el) => (itemRefs.current[item.id] = el)}
-            onClick={() => recenterMap(item.lat, item.lng)}
+            onClick={() => recenterMap(item,itemRefs.current[item.id])}
           >
             <div className="header">
               <h3>{item.name}</h3>
@@ -69,7 +79,7 @@ function Map({ isProfessionnal }) {
       <MapContainer
         center={[46.580002, 0.34]}
         zoom={13}
-        whenCreated={(mapInstance) => (mapRef.current = mapInstance)}
+        ref={setMap}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -78,6 +88,7 @@ function Map({ isProfessionnal }) {
         {[...centers, ...practitioners].map((item) => (
           <Marker
             // icon={item.type === "centre d'imagerie" ? centerIcon : practitionerIcon}
+             ref={(el) => (markerRefs.current[item.id] = el)}
             key={item.id}
             position={[item.lat, item.lng]}
             eventHandlers={{
