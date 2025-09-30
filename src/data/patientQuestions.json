@@ -1,0 +1,26 @@
+[
+  {
+    "id": "q1",
+    "text": "Vous avez entre 50 et 74 ans"
+  },
+  {
+    "id": "q2",
+    "text": "Vous fumez 15 cigarettes par jour depuis plus de 25 ans, ou 1 paquet par jour depuis plus de 20 ans, ou 10 cigarettes/jour depuis plus de 30 ans"
+  },
+  {
+    "id": "q3",
+    "text": "Vous avez arrêté de fumer depuis moins de 15 ans (avec les critères précédents)"
+  },
+  {
+    "id": "q4",
+    "text": "Vous n’avez pas de symptômes"
+  },
+  {
+    "id": "q5",
+    "text": "Vous n’avez pas eu de scanner il y a moins d’un an"
+  },
+  {
+    "id": "q6",
+    "text": "Vous n’avez pas d’antécédent de cancer du poumon"
+  }
+]

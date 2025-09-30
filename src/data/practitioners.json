@@ -1,0 +1,1092 @@
+[
+  {
+    "id": "roblet-denis",
+    "name": "ROBLET DENIS",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 25 16",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "houmaida-hassan",
+    "name": "HOUMAÏDA Hassan",
+    "adress": "51 avenue du president wilson, 16000 angouleme",
+    "phone": "05 45 38 50 01",
+    "department": 16,
+    "lat": 45.6515692,
+    "lng": 0.1449227,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "tomescot-andre",
+    "name": "TOMESCOT Andre",
+    "adress": "2 chemin de fregeneuil 16800 soyaux",
+    "phone": "05 45 97 48 25",
+    "department": 16,
+    "lat": 45.632878,
+    "lng": 0.1961602,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "atallah-vincent",
+    "name": "ATALLAH VINCENT",
+    "adress": "2 chemin de fregeneuil 16800 soyaux",
+    "phone": "05 45 69 68 32",
+    "department": 16,
+    "lat": 45.632878,
+    "lng": 0.1961602,
+    "type": "Oncologue"
+  },
+  {
+    "id": "salemkour-augustin",
+    "name": "SALEMKOUR Augustin",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 26 06",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Oncologue"
+  },
+  {
+    "id": "benhaddou-mokrane",
+    "name": "BENHADDOU MOKRANE",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 26 06",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Oncologue"
+  },
+  {
+    "id": "verger-veronique",
+    "name": "VERGER Véronique",
+    "adress": "65 avenue d'angouleme, 16100 cognac",
+    "phone": "05 45 80 14 72",
+    "department": 16,
+    "lat": 45.6850726,
+    "lng": -0.2975948,
+    "type": "Oncologue"
+  },
+  {
+    "id": "bendaoud-lamine",
+    "name": "BENDAOUD LAMINE",
+    "adress": "2 rue armand simard, 16100 cognac",
+    "phone": "05 45 82 37 12",
+    "department": 16,
+    "lat": 45.6885338,
+    "lng": -0.3287579,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "franchi-claude",
+    "name": "FRANCHI CLAUDE",
+    "adress": "65 avenue d'angouleme, 16100 cognac",
+    "phone": "05 45 80 14 05",
+    "department": 16,
+    "lat": 45.6850726,
+    "lng": -0.2975948,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "lorente-pierre",
+    "name": "LORENTE Pierre",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 16 29 08 00",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "delgoulet-adrien",
+    "name": "DELGOULET Adrien",
+    "adress": "52 rue nouvelle, 16730 fleac",
+    "phone": "05 16 29 08 00",
+    "department": 16,
+    "lat": 45.6726418,
+    "lng": 0.0970863,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "saadi-abdelllatif",
+    "name": "SAADI ABDELLLATIF",
+    "adress": "route de saint bonnet, 16300 barbezieux-saint-hilaire",
+    "phone": "N/A",
+    "department": 16,
+    "lat": 45.4750837,
+    "lng": -0.1361227,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "ferri-patrice",
+    "name": "FERRI Patrice",
+    "adress": "65 avenue d'angouleme, 16100 cognac",
+    "phone": "05 45 80 15 15",
+    "department": 16,
+    "lat": 45.6850726,
+    "lng": -0.2975948,
+    "type": "Radiologue"
+  },
+  {
+    "id": "ayadi-ali",
+    "name": "AYADI ALI",
+    "adress": "65 avenue d'angouleme, 16100 cognac",
+    "phone": "05 45 80 15 15",
+    "department": 16,
+    "lat": 45.6850726,
+    "lng": -0.2975948,
+    "type": "Radiologue"
+  },
+  {
+    "id": "duval-antoine",
+    "name": "DUVAL Antoine",
+    "adress": "2 chemin de fregeneuil 16800 soyaux",
+    "phone": "05 45 97 88 47",
+    "department": 16,
+    "lat": 45.632878,
+    "lng": 0.1961602,
+    "type": "Radiologue"
+  },
+  {
+    "id": "simonet-charles",
+    "name": "SIMONET Charles",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 40 40",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Radiologue"
+  },
+  {
+    "id": "sztark-guillaume",
+    "name": "SZTARK GUILLAUME",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 40 40",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Radiologue"
+  },
+  {
+    "id": "mazet-francois",
+    "name": "MAZET FRANCOIS",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 52 13",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "dubreuil-frederic",
+    "name": "DUBREUIL Frédéric",
+    "adress": "222 avenue de rochefort, 17200 royan",
+    "phone": "05 46 22 21 99",
+    "department": 17,
+    "lat": 45.6525891,
+    "lng": -1.0235107,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "franco-sebastien",
+    "name": "FRANCO Sebastien",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 50 50",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "lathelize-hubert",
+    "name": "LATHELIZE Hubert",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 50 50",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "thomas-eric",
+    "name": "THOMAS Eric",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 50 50",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "anghelescu-ana-laura",
+    "name": "ANGHELESCU Ana-Laura",
+    "adress": "11 boulevard ambroise pare, 17100 saintes",
+    "phone": "05 46 95 15 44",
+    "department": 17,
+    "lat": 45.7462822,
+    "lng": -0.6587133,
+    "type": "Oncologue"
+  },
+  {
+    "id": "anapath",
+    "name": "anapath",
+    "adress": "11 boulevard ambroise pare, 17100 saintes",
+    "phone": "05 46 95 12 83",
+    "department": 17,
+    "lat": 45.7462822,
+    "lng": -0.6587133,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "berge-lefranc-melanie",
+    "name": "BERGE-LEFRANC Mélanie",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 43 90 83",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Oncologue"
+  },
+  {
+    "id": "chummun-roy",
+    "name": "CHUMMUN Roy",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 43 90 83",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Oncologue"
+  },
+  {
+    "id": "jaudel-jacques",
+    "name": "JAUDEL Jacques",
+    "adress": "centre hospitalier saintonge",
+    "phone": "05 46 95 15 13",
+    "department": 17,
+    "lat": 45.7465013,
+    "lng": -0.6540341,
+    "type": "Oncologue"
+  },
+  {
+    "id": "ledrole-gregory",
+    "name": "LEDROLE Gregory",
+    "adress": "centre hospitalier saintonge",
+    "phone": "05 46 95 15 13",
+    "department": 17,
+    "lat": 45.7465013,
+    "lng": -0.6540341,
+    "type": "Oncologue"
+  },
+  {
+    "id": "sauquet-anaelle",
+    "name": "SAUQUET Anaelle",
+    "adress": "centre hospitalier saintonge",
+    "phone": "05 46 95 15 13",
+    "department": 17,
+    "lat": 45.7465013,
+    "lng": -0.6540341,
+    "type": "Oncologue"
+  },
+  {
+    "id": "jamet-claire",
+    "name": "JAMET Claire",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 43 90 83",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Oncologue"
+  },
+  {
+    "id": "kintzinger-clement",
+    "name": "KINTZINGER Clement",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 43 90 83",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Oncologue"
+  },
+  {
+    "id": "trelohan-helene",
+    "name": "TRELOHAN Helene",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 43 90 83",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Oncologue"
+  },
+  {
+    "id": "Oncologue-rochefort",
+    "name": "Oncologue Rochefort",
+    "adress": "1 avenue beligon, 17301 rochefort",
+    "phone": "05 46 88 50 50",
+    "department": 17,
+    "lat": 45.9673381,
+    "lng": -0.9624356,
+    "type": "Oncologue"
+  },
+  {
+    "id": "Oncologue-royan",
+    "name": "Oncologue royan",
+    "adress": "222 avenue de rochefort, 17201 royan",
+    "phone": "05 46 22 22 22",
+    "department": 17,
+    "lat": 45.6525891,
+    "lng": -1.0235107,
+    "type": "Oncologue"
+  },
+  {
+    "id": "antone-elise",
+    "name": "ANTONE Elise",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "Oncologue-pc-stg",
+    "name": "Oncologue PC Stg",
+    "adress": "3b boulevard de lattre tassigny, 17110 saint georges de didonne",
+    "phone": "N/A",
+    "department": 17,
+    "lat": 45.6034,
+    "lng": -1.0049,
+    "type": "Oncologue"
+  },
+  {
+    "id": "bicherie-abdelaziz",
+    "name": "BICHERIE Abdelaziz",
+    "adress": "222 avenue de rochefort, 17200 royan",
+    "phone": "05 46 95 15 77",
+    "department": 17,
+    "lat": 45.6525891,
+    "lng": -1.0235107,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "bonnefoy-philippe",
+    "name": "BONNEFOY Philippe",
+    "adress": "32 bd denfert rochereau, 17500 jonzac",
+    "phone": "05 46 95 15 77",
+    "department": 17,
+    "lat": 45.4414556,
+    "lng": -0.4371803,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "bousso-awa",
+    "name": "BOUSSO AWA",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "cassanet-thomas",
+    "name": "CASSANET Thomas",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "dore-pierre",
+    "name": "DORE Pierre",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "dupic-chantal",
+    "name": "DUPIC Chantal",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "couturier-hugo",
+    "name": "COUTURIER Hugo",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "gredy-louis",
+    "name": "GREDY Louis",
+    "adress": "4 rue du chateau de vauclerc, 17000 la rochelle",
+    "phone": "05 46 41 26 60",
+    "department": 17,
+    "lat": 46.1632654,
+    "lng": -1.1542325,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "guilloux-diane",
+    "name": "GUILLOUX Diane",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "gendry-thierry",
+    "name": "GENDRY Thierry",
+    "adress": "3 rue des trois freres, 17000 la rochelle",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1591082,
+    "lng": -1.1958811,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "heraudeau-adeline-2",
+    "name": "HERAUDEAU ADELINE",
+    "adress": "3 rue des trois freres, 17000 la rochelle",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1591082,
+    "lng": -1.1958811,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "cassanet-thomas2",
+    "name": "CASSANET THOMAS",
+    "adress": "3 rue des trois freres, 17000 la rochelle",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1591082,
+    "lng": -1.1958811,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "bousso-awa-2",
+    "name": "BOUSSO Awa",
+    "adress": "3 rue des trois freres, 17000 la rochelle",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1591082,
+    "lng": -1.1958811,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "lafarge-marion",
+    "name": "LAFARGE MARION",
+    "adress": "3 rue des trois freres, 17000 la rochelle",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1591082,
+    "lng": -1.1958811,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "heraudeau-adeline",
+    "name": "HERAUDEAU Adeline",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "lafarge-marion-2",
+    "name": "LAFARGE Marion",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 41 33 80",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "levrat-virginie",
+    "name": "LEVRAT Virginie",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "nowak-damien",
+    "name": "NOWAK Damien",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "van-oortegem-alicia",
+    "name": "VAN OORTEGEM Alicia",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "yazji-osman",
+    "name": "YAZJI Osman",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 69 24",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "bellaud-michel",
+    "name": "BELLAUD Michel",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 67 88 88",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Radiologue"
+  },
+  {
+    "id": "beydoun-nadeem",
+    "name": "BEYDOUN Nadeem",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 51 89",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Radiologue"
+  },
+  {
+    "id": "catena-vittorio",
+    "name": "CATENA Vittorio",
+    "adress": "11 boulevard ambroise pare, 17100 saintes",
+    "phone": "05 46 95 15 77",
+    "department": 17,
+    "lat": 45.7462822,
+    "lng": -0.6587133,
+    "type": "Radiologue"
+  },
+  {
+    "id": "commarieu-pierre-victor",
+    "name": "COMMARIEU Pierre-Victor",
+    "adress": "11 boulevard ambroise pare, 17100 saintes",
+    "phone": "05 46 95 15 77",
+    "department": 17,
+    "lat": 45.7462822,
+    "lng": -0.6587133,
+    "type": "Radiologue"
+  },
+  {
+    "id": "daube-pierre",
+    "name": "DAUBE Pierre",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 51 89",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Radiologue"
+  },
+  {
+    "id": "de-la-torre-yannick",
+    "name": "DE LA TORRE Yannick",
+    "adress": "rue du docteur schweitzer, 17019 la rochelle",
+    "phone": "05 46 45 51 89",
+    "department": 17,
+    "lat": 46.1581645,
+    "lng": -1.1435369,
+    "type": "Radiologue"
+  },
+  {
+    "id": "gaillot-kathleen",
+    "name": "GAILLOT Kathleen",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 67 88 88",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Radiologue"
+  },
+  {
+    "id": "nivet-hubert",
+    "name": "NIVET Hubert",
+    "adress": "centre hospitalier saintonge",
+    "phone": "05 46 95 15 77",
+    "department": 17,
+    "lat": 45.7465013,
+    "lng": -0.6540341,
+    "type": "Radiologue"
+  },
+  {
+    "id": "landois-thierry",
+    "name": "LANDOIS Thierry",
+    "adress": "26 rue du general dumont, 17000 la rochelle",
+    "phone": "05 46 45 51 89",
+    "department": 17,
+    "lat": 46.1604081,
+    "lng": -1.1750193,
+    "type": "Radiologue"
+  },
+  {
+    "id": "lecomte-jean-christophe",
+    "name": "LECOMTE Jean-Christophe",
+    "adress": "11 boulevard ambroise pare, 17100 saintes",
+    "phone": "05 49 59 50 13",
+    "department": 17,
+    "lat": 45.7462822,
+    "lng": -0.6587133,
+    "type": "Radiologue"
+  },
+  {
+    "id": "vergnes-remy",
+    "name": "VERGNES Rémy",
+    "adress": "26 rue du general dumont, 17000 la rochelle",
+    "phone": "05 46 67 88 88",
+    "department": 17,
+    "lat": 46.1604081,
+    "lng": -1.1750193,
+    "type": "Radiologue"
+  },
+  {
+    "id": "volpi-stephanie",
+    "name": "VOLPI Stephanie",
+    "adress": "26 rue moulin des justices, 17138 puilboreau",
+    "phone": "05 46 67 88 88",
+    "department": 17,
+    "lat": 46.1735981,
+    "lng": -1.1263146,
+    "type": "Radiologue"
+  },
+  {
+    "id": "boye-karine",
+    "name": "BOYE KARINE",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 32 79 79",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "gal-luminata",
+    "name": "GAL LUMINATA",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 32 79 79",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "ples-raluca",
+    "name": "PLES RALUCA",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 78 33 05",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "Chirurgien-79",
+    "name": "Chirurgien 79",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "N/A",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "Oncologue-79",
+    "name": "Oncologue 79",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "N/A",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Oncologue"
+  },
+  {
+    "id": "Oncologue-79-2",
+    "name": "Oncologue 79",
+    "adress": "84 route d'aiffres, 79000 niort",
+    "phone": "N/A",
+    "department": 79,
+    "lat": 46.3171638,
+    "lng": -0.4570007,
+    "type": "Oncologue"
+  },
+  {
+    "id": "Oncologue-79-3",
+    "name": "Oncologue 79",
+    "adress": "4 rue du docteur michel binet, 79350 faye-l'abbesse",
+    "phone": "N/A",
+    "department": 79,
+    "lat": 46.8315542,
+    "lng": -0.3859279,
+    "type": "Oncologue"
+  },
+  {
+    "id": "chahla-eli",
+    "name": "CHAHLA Eli",
+    "adress": "84 route d'aiffres, 79000 niort",
+    "phone": "05 49 34 26 26",
+    "department": 79,
+    "lat": 46.3171638,
+    "lng": -0.4570007,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "diaz-alicia",
+    "name": "DIAZ Alicia",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 34 26 26",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "menard-aline",
+    "name": "MENARD Aline",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 78 35 89",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "aziria-sid-ali",
+    "name": "AZIRIA Sid Ali",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 59 78 31 11",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Radiologue"
+  },
+  {
+    "id": "saccardy-fabrice",
+    "name": "SACCARDY Fabrice",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 59 78 31 11",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Radiologue"
+  },
+  {
+    "id": "boucebci-samy",
+    "name": "BOUCEBCI SAMY",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 32 32 32",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Radiologue"
+  },
+  {
+    "id": "chan-paul",
+    "name": "CHAN PAUL",
+    "adress": "40 avenue charles de gaulle, 79000 niort",
+    "phone": "05 49 32 32 32",
+    "department": 79,
+    "lat": 46.3165581,
+    "lng": -0.4585109,
+    "type": "Radiologue"
+  },
+  {
+    "id": "laffon-camille",
+    "name": "LAFFON CAMILLE",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 25 16",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "allain-geraldine",
+    "name": "ALLAIN GERALDINE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 85",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "jayle-christophe",
+    "name": "JAYLE CHRISTOPHE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 85",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Chirurgien thoracique"
+  },
+  {
+    "id": "bankole-victoria",
+    "name": "BANKOLE VICTORIA",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "N/A",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "bironneau-vanessa",
+    "name": "BIRONNEAU VANESSA",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 74",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "blanc-nathalia",
+    "name": "BLANC NATHALIA",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "N/A",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "dutilh-julien",
+    "name": "DUTILH JULIEN",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 74",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "gilbert-mylene",
+    "name": "GILBERT MYLENE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 74",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "meurice-jean-claude",
+    "name": "MEURICE JEAN CLAUDE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 74",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "vieille-grosjean-emeline",
+    "name": "VIEILLE GROSJEAN EMELINE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 74",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "anapath-2",
+    "name": "anapath",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 31 96",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "courat-beuvon-salome",
+    "name": "COURAT-BEUVON Salome",
+    "adress": "1 rue de la providence, 86000 poitiers",
+    "phone": "05 49 61 72 72",
+    "department": 86,
+    "lat": 46.5643973,
+    "lng": 0.3669262,
+    "type": "Pneumologue"
+  },
+  {
+    "id": "Oncologue-86",
+    "name": "Oncologue 86",
+    "adress": "38 rue du fief de grimoire, 86000 poitiers",
+    "phone": "05 49 42 29 29",
+    "department": 86,
+    "lat": 46.5701883,
+    "lng": 0.3401063,
+    "type": "Oncologue"
+  },
+  {
+    "id": "anapath-3",
+    "name": "anapath",
+    "adress": "38 rue du fief de grimoire, 86000 poitiers",
+    "phone": "05 49 42 29 29",
+    "department": 86,
+    "lat": 46.5701883,
+    "lng": 0.3401063,
+    "type": "Anatomo-pathologiste"
+  },
+  {
+    "id": "Oncologue-86-2",
+    "name": "Oncologue 86",
+    "adress": "1 rue du docteur luc montagnier, 86106 chatellerault",
+    "phone": "05 49 02 90 90",
+    "department": 86,
+    "lat": 46.8332639,
+    "lng": 0.5565817,
+    "type": "Oncologue"
+  },
+  {
+    "id": "Oncologue-86-3",
+    "name": "Oncologue 86",
+    "adress": "17 rue de verdun, 86100 chatellerault",
+    "phone": "N/A",
+    "department": 86,
+    "lat": 46.8193511,
+    "lng": 0.538753,
+    "type": "Oncologue"
+  },
+  {
+    "id": "Oncologue-86-4",
+    "name": "Oncologue 86",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 44",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Oncologue"
+  },
+  {
+    "id": "carbillet-piere-quentin",
+    "name": "CARBILLET PIERE QUENTIN",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "N/A",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "combeau-melina",
+    "name": "COMBEAU MELINA",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "dumas-victor",
+    "name": "DUMAS VICTOR",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "fauche-cedric",
+    "name": "FAUCHE CEDRIC",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "herpe-guillaume",
+    "name": "HERPE GUILLAUME",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "landragin-emmanuel",
+    "name": "LANDRAGIN EMMANUEL",
+    "adress": "chemin du grand girac, 16959 angouleme",
+    "phone": "05 45 24 40 40",
+    "department": 16,
+    "lat": 45.6286166,
+    "lng": 0.1174709,
+    "type": "Radiologue"
+  },
+  {
+    "id": "raynaud-nicolas",
+    "name": "RAYNAUD NICOLAS",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "tasu-jean-pierre",
+    "name": "TASU JEAN PIERRE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "velasco-stephane",
+    "name": "VELASCO STEPHANE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 39 11",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  },
+  {
+    "id": "vionnet-mathilde",
+    "name": "VIONNET MATHILDE",
+    "adress": "2 rue de la miletrie, 86000 poitiers",
+    "phone": "05 49 44 44 74",
+    "department": 86,
+    "lat": 46.554203,
+    "lng": 0.3881721,
+    "type": "Radiologue"
+  }
+]
