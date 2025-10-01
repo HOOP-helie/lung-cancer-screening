@@ -13,7 +13,7 @@ function Map({ isDoctor }) {
   const markerRefs = useRef({});
   const [map, setMap] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
-
+const [postalCode, setPostalCode] = useState("");
  const data = isDoctor ? [...centers, ...practitioners] : centers;
   const types = [...new Set(data.map((item) => item.type))];
   const filteredData = selectedType
@@ -55,11 +55,39 @@ function Map({ isDoctor }) {
   //   iconUrl: ("/img/practitioner.png"),
   //   iconSize: [32,32]
   // })
-
  
+
+  const recenterByPostalCode = async (e) => {
+    e.preventDefault();
+    if (!postalCode) return;
+
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/search?postalcode=${postalCode}&country=fr&format=json&limit=1`
+      );
+      const data = await res.json();
+      if (data.length > 0) {
+        const { lat, lon } = data[0];
+        map.flyTo([parseFloat(lat), parseFloat(lon)], 11, { duration: 1.2 });
+      } else {
+        alert("Code postal introuvable");
+      }
+    } catch (err) {
+      console.error("Erreur géocodage:", err);
+    }
+  }
 
   return (
     <div className="directory-map-container">
+      <form onSubmit={recenterByPostalCode} className="postal-form">
+          <input
+            type="text"
+            placeholder="Entrez un code postal"
+            value={postalCode}
+            onChange={(e) => setPostalCode(e.target.value)}
+          />
+          <button type="submit">Rechercher</button>
+        </form>
       {isDoctor && (
         <div className="filters">
           <label htmlFor="type-select">Filtrer par type :</label>
@@ -129,9 +157,8 @@ function Map({ isDoctor }) {
 }
 
 export default Map;
-{
+
   /* <a href="https://www.flaticon.com/fr/icones-gratuites/hopital" title="hôpital icônes">Hôpital icônes créées par Infinite Dendrogram - Flaticon</a> */
-}
-{
+
   /* <a href="https://www.flaticon.com/fr/icones-gratuites/medecin" title="médecin icônes">Médecin icônes créées par monkik - Flaticon</a> */
-}
+
