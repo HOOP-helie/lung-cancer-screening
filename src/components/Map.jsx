@@ -51,18 +51,18 @@ function Map({ isDoctor }) {
 
   const centerIcon = new Icon({
     iconUrl: hospitalPng,
-    iconSize: [36,36],
+    iconSize: [36, 36],
   });
 
   const locationIcon = new Icon({
     iconUrl: userLocationIconPng,
-    iconSize: [36,36],
+    iconSize: [36, 36],
   });
 
-   const doctorIcon  = new Icon ({
+  const doctorIcon = new Icon({
     iconUrl: doctorIconPng,
-    iconSize: [36,36]
-  })
+    iconSize: [36, 36],
+  });
 
   const recenterByPostalCode = async (e) => {
     e.preventDefault();
@@ -139,102 +139,109 @@ function Map({ isDoctor }) {
       })
     : data;
   return (
-    <div className="directory-map-container">
-    <button onClick={handleGeolocate} disabled={isLoading}>
+    <div className="map-form-container">
+      <div className="map-filters">
+        <div className="location-filters">
+          <form onSubmit={recenterByPostalCode} className="postal-form">
+            <input
+              type="text"
+              placeholder="Entrez un code postal"
+              value={postalCode}
+              onChange={(e) => setPostalCode(e.target.value)}
+            />
+            <button type="submit">Rechercher</button>
+          </form>
+          ou
+          <button onClick={handleGeolocate} disabled={isLoading}>
             {isLoading ? "⏳ Recherche..." : "📍 Me géolocaliser"}
           </button>
-      <form onSubmit={recenterByPostalCode} className="postal-form">
-        <input
-          type="text"
-          placeholder="Entrez un code postal"
-          value={postalCode}
-          onChange={(e) => setPostalCode(e.target.value)}
-        />
-        <button type="submit">Rechercher</button>
-      </form>
-      {isDoctor && (
-        <div className="filters">
-          <label htmlFor="type-select">Filtrer par type :</label>
-          <select
-            id="type-select"
-            value={selectedType || ""}
-            onChange={(e) => setSelectedType(e.target.value || null)}
-          >
-            <option value="">Tous</option>
-            {types.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
         </div>
-      )}
-      <div className="directory-list">
-        {sortedData.map((item) => (
-          <article
-            key={item.id}
-            className="card"
-            ref={(el) => (itemRefs.current[item.id] = el)}
-            onClick={() => recenterMap(item, itemRefs.current[item.id])}
-          >
-            <div className="header">
-             <div>
-               <h3>{item.name}</h3>
-              <p>{item.type}</p>
-             </div>
-              {referencePoint ? (
-                <p className="distance">
-                  {getDistance(
-                    referencePoint.lat,
-                    referencePoint.lng,
-                    item.lat,
-                    item.lng
-                  ).toFixed(1)}{" "}
-                  km
-                </p>
-              ) : null}
-            </div>
-            <hr />
-            <p className="address">
-              <LocationIcon />
-              {item.adress}
-            </p>
-
-            <a className="phone" href={`tel:${item.phone}`}>
-              <PhoneIcon width={20} height={20} />
-              {item.phone}
-            </a>
-          </article>
-        ))}
+        {isDoctor && (
+          <div className="category-filters">
+            <label htmlFor="type-select">Afficher uniquement :</label>
+            <select
+              id="type-select"
+              value={selectedType || ""}
+              onChange={(e) => setSelectedType(e.target.value || null)}
+            >
+              <option value="">Tous</option>
+              {types.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
-      <MapContainer center={[46.580002, 0.34]} zoom={13} ref={setMap}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {filteredData.map((item) => (
-          <Marker
-            icon={item.type === "Centre d'imagerie" ? centerIcon : doctorIcon}
-            ref={(el) => (markerRefs.current[item.id] = el)}
-            key={item.id}
-            position={[item.lat, item.lng]}
-            eventHandlers={{
-              click: () => scrollToItem(item.id),
-            }}
-          >
-            <Popup>
-              <p className="name">{item.name}</p>
-              <p>{item.type}</p>
-            </Popup>
-          </Marker>
-        ))}
-        {referencePoint ? (
-          <Marker
-            icon={locationIcon}
-            position={[referencePoint.lat, referencePoint.lng]}
-          ></Marker>
-        ) : null}
-      </MapContainer>
+      <div className="directory-map-container">
+        <div className="directory-list">
+          {sortedData.map((item) => (
+            <article
+              key={item.id}
+              className="card"
+              ref={(el) => (itemRefs.current[item.id] = el)}
+              onClick={() => recenterMap(item, itemRefs.current[item.id])}
+            >
+              <div className="header">
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>{item.type}</p>
+                </div>
+                {referencePoint ? (
+                  <p className="distance">
+                    {getDistance(
+                      referencePoint.lat,
+                      referencePoint.lng,
+                      item.lat,
+                      item.lng
+                    ).toFixed(1)}{" "}
+                    km
+                  </p>
+                ) : null}
+              </div>
+              <hr />
+              <p className="address">
+                <LocationIcon />
+                {item.adress}
+              </p>
+
+              <a className="phone" href={`tel:${item.phone}`}>
+                <PhoneIcon width={20} height={20} />
+                {item.phone}
+              </a>
+            </article>
+          ))}
+        </div>
+        <MapContainer center={[46.580002, 0.34]} zoom={13} ref={setMap}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {filteredData.map((item) => (
+            <Marker
+              icon={item.type === "Centre d'imagerie" ? centerIcon : doctorIcon}
+              ref={(el) => (markerRefs.current[item.id] = el)}
+              key={item.id}
+              position={[item.lat, item.lng]}
+              eventHandlers={{
+                click: () => scrollToItem(item.id),
+              }}
+            >
+              <Popup>
+                <p className="name">{item.name}</p>
+                <p>{item.type}</p>
+              </Popup>
+            </Marker>
+          ))}
+          {referencePoint ? (
+            <Marker
+              icon={locationIcon}
+              position={[referencePoint.lat, referencePoint.lng]}
+            ></Marker>
+          ) : null}
+        </MapContainer>
+      </div>
     </div>
   );
 }
@@ -245,5 +252,4 @@ export default Map;
 
 /* <a href="https://www.flaticon.com/free-icons/doctor" title="doctor icons">Doctor icons created by juicy_fish - Flaticon</a> */
 
-  /* <a href="https://www.flaticon.com/free-icons/pin-map" title="pin map icons">Pin map icons created by Freepik - Flaticon</a> */
-
+/* <a href="https://www.flaticon.com/free-icons/pin-map" title="pin map icons">Pin map icons created by Freepik - Flaticon</a> */
