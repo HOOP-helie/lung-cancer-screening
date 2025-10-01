@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function LocationIcon(props) {
+function Location(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ function LocationIcon(props) {
   );
 }
 
-export default LocationIcon;
+export default Location;

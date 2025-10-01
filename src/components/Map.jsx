@@ -1,12 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import centers from "@/data/centers.json";
 import practitioners from "@/data/practitioners.json";
-import { Icon, map } from "leaflet";
+import { Icon } from "leaflet";
 import hospitalPng from "@/assets/img/hospital.png";
 import doctorIconPng from "@/assets/img/doctors.png";
 import userLocationIconPng from "@/assets/img/pin-map.png";
-import PhoneIcon from "@/components/icons/phoneIcon";
-import LocationIcon from "@/components/icons/LocationIcon";
+import Phone from "@/components/icons/Phone";
+import Location from "@/components/icons/Location";
 import { useRef, useState } from "react";
 
 function Map({ isDoctor }) {
@@ -54,7 +54,7 @@ function Map({ isDoctor }) {
     iconSize: [36, 36],
   });
 
-  const locationIcon = new Icon({
+  const userLocationIcon = new Icon({
     iconUrl: userLocationIconPng,
     iconSize: [36, 36],
   });
@@ -202,12 +202,12 @@ function Map({ isDoctor }) {
               </div>
               <hr />
               <p className="address">
-                <LocationIcon />
+                <Location />
                 {item.adress}
               </p>
 
               <a className="phone" href={`tel:${item.phone}`}>
-                <PhoneIcon width={20} height={20} fill="#C9A66B"/>
+                <Phone width={20} height={20} fill="#C9A66B"/>
                 {item.phone}
               </a>
             </article>
@@ -236,7 +236,7 @@ function Map({ isDoctor }) {
           ))}
           {referencePoint ? (
             <Marker
-              icon={locationIcon}
+              icon={userLocationIcon}
               position={[referencePoint.lat, referencePoint.lng]}
             ></Marker>
           ) : null}
