@@ -5,18 +5,17 @@ import Map from "./components/Map";
 import PatientForm from "./components/PatientForm";
 
 function App() {
-  const [isProfessional, setIsProfessional] = useState(null);
+  const [isDoctor, setIsDoctor] = useState(null);
   const [stepNumber, setStepNumber] = useState(0);
   // const [patientScore, setPatientScore] = useState(0);
   return (
     <>
       <div>
-        {stepNumber}
         {stepNumber == 0 && (
           <div>
             <p>Êtes-vous un professionnel de santé ?</p>
-            <button onClick={() => setIsProfessional(true)}>Oui</button>
-            <button onClick={() => setIsProfessional(false)}>Non</button>
+            <button onClick={() => setIsDoctor(true)}>Oui</button>
+            <button onClick={() => setIsDoctor(false)}>Non</button>
             <button
               onClick={() => setStepNumber((stepNumber) => stepNumber + 1)}
             >
@@ -25,7 +24,7 @@ function App() {
           </div>
         )}
         <div>
-          { stepNumber > 0 ? <Map isProfessional={isProfessional}/> : null}
+          { stepNumber > 0 ? <Map isDoctor={isDoctor}/> : null}
 
           {/* {isProfessional && stepNumber > 0 ? <Map /> : null} */}
           {/* {!isProfessional && stepNumber > 0 ? (

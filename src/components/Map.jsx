@@ -8,9 +8,19 @@ import PhoneIcon from "@/components/icons/PhoneIcon";
 import LocationIcon from "@/components/icons/LocationIcon";
 import { useRef, useState } from "react";
 
-function Map({ isProfessionnal }) {
+function Map({ isDoctor }) {
   const itemRefs = useRef({});
-    const markerRefs = useRef({});
+  const markerRefs = useRef({});
+  const [map, setMap] = useState(null);
+  const [selectedType, setSelectedType] = useState(null);
+
+ const data = isDoctor ? [...centers, ...practitioners] : centers;
+  const types = [...new Set(data.map((item) => item.type))];
+  const filteredData = selectedType
+    ? data.filter((d) => d.type === selectedType)
+    : data;
+
+
   const scrollToItem = (id) => {
     const el = itemRefs.current[id];
     if (el) {
@@ -23,21 +33,17 @@ function Map({ isProfessionnal }) {
     }
   };
 
-  const [map, setMap] = useState(null);
-
-  // fonction utilitaire : recentre la map
   const recenterMap = (item, article) => {
-     Object.values(itemRefs.current).forEach((element) => {
-        element.classList.remove("highlight");
-      });
-  article.classList.add("highlight");
-  article.scrollIntoView({ behavior: "smooth", block: "start" });
-    map.flyTo([item.lat, item.lng], 13, {animate: false});
+    Object.values(itemRefs.current).forEach((element) => {
+      element.classList.remove("highlight");
+    });
+    article.classList.add("highlight");
+    article.scrollIntoView({ behavior: "smooth", block: "start" });
+    map.flyTo([item.lat, item.lng], 13, { animate: false });
     const marker = markerRefs.current[item.id];
-      if (marker) {
-        marker.openPopup();
-      }
-    
+    if (marker) {
+      marker.openPopup();
+    }
   };
 
   const centerIcon = new Icon({
@@ -49,15 +55,35 @@ function Map({ isProfessionnal }) {
   //   iconUrl: ("/img/practitioner.png"),
   //   iconSize: [32,32]
   // })
+
+ 
+
   return (
     <div className="directory-map-container">
+      {isDoctor && (
+        <div className="filters">
+          <label htmlFor="type-select">Filtrer par type :</label>
+          <select
+            id="type-select"
+            value={selectedType || ""}
+            onChange={(e) => setSelectedType(e.target.value || null)}
+          >
+            <option value="">Tous</option>
+            {types.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       <div className="directory-list">
-        {[...centers, ...practitioners].map((item) => (
+        {filteredData.map((item) => (
           <article
             key={item.id}
             className="card"
             ref={(el) => (itemRefs.current[item.id] = el)}
-            onClick={() => recenterMap(item,itemRefs.current[item.id])}
+            onClick={() => recenterMap(item, itemRefs.current[item.id])}
           >
             <div className="header">
               <h3>{item.name}</h3>
@@ -76,19 +102,15 @@ function Map({ isProfessionnal }) {
           </article>
         ))}
       </div>
-      <MapContainer
-        center={[46.580002, 0.34]}
-        zoom={13}
-        ref={setMap}
-      >
+      <MapContainer center={[46.580002, 0.34]} zoom={13} ref={setMap}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {[...centers, ...practitioners].map((item) => (
+        {filteredData.map((item) => (
           <Marker
             // icon={item.type === "centre d'imagerie" ? centerIcon : practitionerIcon}
-             ref={(el) => (markerRefs.current[item.id] = el)}
+            ref={(el) => (markerRefs.current[item.id] = el)}
             key={item.id}
             position={[item.lat, item.lng]}
             eventHandlers={{
