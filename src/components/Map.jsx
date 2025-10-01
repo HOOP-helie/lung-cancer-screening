@@ -207,7 +207,7 @@ function Map({ isDoctor }) {
               </p>
 
               <a className="phone" href={`tel:${item.phone}`}>
-                <PhoneIcon width={20} height={20} />
+                <PhoneIcon width={20} height={20} fill="#C9A66B"/>
                 {item.phone}
               </a>
             </article>

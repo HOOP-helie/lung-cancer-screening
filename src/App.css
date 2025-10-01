@@ -90,13 +90,15 @@ p {
   margin: 0.2rem 0;
 }
 
-a {
+a.phone {
   font-weight: 400;
   text-decoration: none;
+  color: var(--color-gold);
+
 }
-a:hover {
-  color: var(--color-dusty-rose);
-}
+/* a:hover  {
+  color: var(--color-gold);
+} */
 
 
 .map-filters {
