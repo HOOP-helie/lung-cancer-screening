@@ -3,7 +3,8 @@ import centers from "@/data/centers.json";
 import practitioners from "@/data/practitioners.json";
 import { Icon, map } from "leaflet";
 import hospitalPng from "@/assets/img/hospital.png";
-import practitionerIcon from "@/assets/img/practitioner.png";
+import doctorIconPng from "@/assets/img/doctors.png";
+import userLocationIconPng from "@/assets/img/pin-map.png";
 import PhoneIcon from "@/components/icons/PhoneIcon";
 import LocationIcon from "@/components/icons/LocationIcon";
 import { useRef, useState } from "react";
@@ -13,13 +14,15 @@ function Map({ isDoctor }) {
   const markerRefs = useRef({});
   const [map, setMap] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
-const [postalCode, setPostalCode] = useState("");
- const data = isDoctor ? [...centers, ...practitioners] : centers;
+  const [postalCode, setPostalCode] = useState("");
+  const data = isDoctor ? [...centers, ...practitioners] : centers;
   const types = [...new Set(data.map((item) => item.type))];
+  const [referencePoint, setReferencePoint] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   const filteredData = selectedType
     ? data.filter((d) => d.type === selectedType)
     : data;
-
 
   const scrollToItem = (id) => {
     const el = itemRefs.current[id];
@@ -48,14 +51,18 @@ const [postalCode, setPostalCode] = useState("");
 
   const centerIcon = new Icon({
     iconUrl: hospitalPng,
-    iconSize: [32, 32],
+    iconSize: [36,36],
   });
 
-  //  const pracitionnerIcon  = new Icon ({
-  //   iconUrl: ("/img/practitioner.png"),
-  //   iconSize: [32,32]
-  // })
- 
+  const locationIcon = new Icon({
+    iconUrl: userLocationIconPng,
+    iconSize: [36,36],
+  });
+
+   const doctorIcon  = new Icon ({
+    iconUrl: doctorIconPng,
+    iconSize: [36,36]
+  })
 
   const recenterByPostalCode = async (e) => {
     e.preventDefault();
@@ -75,19 +82,76 @@ const [postalCode, setPostalCode] = useState("");
     } catch (err) {
       console.error("Erreur géocodage:", err);
     }
-  }
+  };
 
+  const handleGeolocate = () => {
+    if (!navigator.geolocation) {
+      alert("La géolocalisation n’est pas supportée par ce navigateur");
+      return;
+    }
+    setIsLoading(true);
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        setReferencePoint({ lat: latitude, lng: longitude });
+        if (map) {
+          map.flyTo([latitude, longitude], 12, { duration: 1.5 });
+          setIsLoading(false);
+        }
+      },
+      (err) => {
+        console.error("Erreur géolocalisation:", err);
+        alert("Impossible de récupérer votre position");
+        setIsLoading(false);
+      }
+    );
+  };
+
+  const getDistance = (lat1, lon1, lat2, lon2) => {
+    const R = 6371;
+    const dLat = ((lat2 - lat1) * Math.PI) / 180;
+    const dLon = ((lon2 - lon1) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  };
+
+  const sortedData = referencePoint
+    ? [...data].sort((a, b) => {
+        const distA = getDistance(
+          referencePoint.lat,
+          referencePoint.lng,
+          a.lat,
+          a.lng
+        );
+        const distB = getDistance(
+          referencePoint.lat,
+          referencePoint.lng,
+          b.lat,
+          b.lng
+        );
+        return distA - distB;
+      })
+    : data;
   return (
     <div className="directory-map-container">
+    <button onClick={handleGeolocate} disabled={isLoading}>
+            {isLoading ? "⏳ Recherche..." : "📍 Me géolocaliser"}
+          </button>
       <form onSubmit={recenterByPostalCode} className="postal-form">
-          <input
-            type="text"
-            placeholder="Entrez un code postal"
-            value={postalCode}
-            onChange={(e) => setPostalCode(e.target.value)}
-          />
-          <button type="submit">Rechercher</button>
-        </form>
+        <input
+          type="text"
+          placeholder="Entrez un code postal"
+          value={postalCode}
+          onChange={(e) => setPostalCode(e.target.value)}
+        />
+        <button type="submit">Rechercher</button>
+      </form>
       {isDoctor && (
         <div className="filters">
           <label htmlFor="type-select">Filtrer par type :</label>
@@ -106,7 +170,7 @@ const [postalCode, setPostalCode] = useState("");
         </div>
       )}
       <div className="directory-list">
-        {filteredData.map((item) => (
+        {sortedData.map((item) => (
           <article
             key={item.id}
             className="card"
@@ -114,8 +178,21 @@ const [postalCode, setPostalCode] = useState("");
             onClick={() => recenterMap(item, itemRefs.current[item.id])}
           >
             <div className="header">
-              <h3>{item.name}</h3>
+             <div>
+               <h3>{item.name}</h3>
               <p>{item.type}</p>
+             </div>
+              {referencePoint ? (
+                <p className="distance">
+                  {getDistance(
+                    referencePoint.lat,
+                    referencePoint.lng,
+                    item.lat,
+                    item.lng
+                  ).toFixed(1)}{" "}
+                  km
+                </p>
+              ) : null}
             </div>
             <hr />
             <p className="address">
@@ -137,7 +214,7 @@ const [postalCode, setPostalCode] = useState("");
         />
         {filteredData.map((item) => (
           <Marker
-            // icon={item.type === "centre d'imagerie" ? centerIcon : practitionerIcon}
+            icon={item.type === "Centre d'imagerie" ? centerIcon : doctorIcon}
             ref={(el) => (markerRefs.current[item.id] = el)}
             key={item.id}
             position={[item.lat, item.lng]}
@@ -151,6 +228,12 @@ const [postalCode, setPostalCode] = useState("");
             </Popup>
           </Marker>
         ))}
+        {referencePoint ? (
+          <Marker
+            icon={locationIcon}
+            position={[referencePoint.lat, referencePoint.lng]}
+          ></Marker>
+        ) : null}
       </MapContainer>
     </div>
   );
@@ -158,7 +241,9 @@ const [postalCode, setPostalCode] = useState("");
 
 export default Map;
 
-  /* <a href="https://www.flaticon.com/fr/icones-gratuites/hopital" title="hôpital icônes">Hôpital icônes créées par Infinite Dendrogram - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/hospital" title="hospital icons">Hospital icons created by André Luiz Gollo - Flaticon</a> */
 
-  /* <a href="https://www.flaticon.com/fr/icones-gratuites/medecin" title="médecin icônes">Médecin icônes créées par monkik - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/doctor" title="doctor icons">Doctor icons created by juicy_fish - Flaticon</a> */
+
+  /* <a href="https://www.flaticon.com/free-icons/pin-map" title="pin map icons">Pin map icons created by Freepik - Flaticon</a> */
 
