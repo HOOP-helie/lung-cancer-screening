@@ -5,7 +5,7 @@ import { Icon, map } from "leaflet";
 import hospitalPng from "@/assets/img/hospital.png";
 import doctorIconPng from "@/assets/img/doctors.png";
 import userLocationIconPng from "@/assets/img/pin-map.png";
-import PhoneIcon from "@/components/icons/PhoneIcon";
+import PhoneIcon from "@/components/icons/PhoneIcon.png";
 import LocationIcon from "@/components/icons/LocationIcon";
 import { useRef, useState } from "react";
 
