@@ -47,7 +47,7 @@ function App() {
         )}
         <div>
           {stepNumber > 0 ? <Map isDoctor={isDoctor} /> : null}
-
+{/* commentaires */}
           {/* {isProfessional && stepNumber > 0 ? <Map /> : null} */}
           {/* {!isProfessional && stepNumber > 0 ? (
             <PatientForm
