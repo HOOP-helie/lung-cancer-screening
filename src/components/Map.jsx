@@ -7,7 +7,7 @@ import doctorIconPng from "@/assets/img/doctors.png";
 import userLocationIconPng from "@/assets/img/pin-map.png";
 import Phone from "@/components/icons/Phone";
 import Location from "@/components/icons/Location";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 
 function Map({ isDoctor }) {
   const itemRefs = useRef({});
@@ -20,9 +20,14 @@ function Map({ isDoctor }) {
   const [referencePoint, setReferencePoint] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const filteredData = selectedType
-    ? data.filter((d) => d.type === selectedType)
-    : data;
+  const jitter = (value) => value + (Math.random() - 0.5) * 0.0008; 
+  const filteredData = useMemo(() => {
+    let datafilter = selectedType
+      ? data.filter((d) => d.type === selectedType)
+      : data;
+
+    return datafilter;
+  }, [data, selectedType]);
 
   const scrollToItem = (id) => {
     const el = itemRefs.current[id];
@@ -30,23 +35,27 @@ function Map({ isDoctor }) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
 
       Object.values(itemRefs.current).forEach((element) => {
-        element.classList.remove("highlight");
+        if (element) element.classList.remove("highlight");
       });
       el.classList.add("highlight");
     }
   };
 
-  const recenterMap = (item, article) => {
-    Object.values(itemRefs.current).forEach((element) => {
-      element.classList.remove("highlight");
-    });
+  const recenterMap = (item) => {
+    const article = itemRefs.current[item.id];
+    if (!article) return; // Sécurité
+
+    Object.values(itemRefs.current).forEach((el) =>
+      el?.classList?.remove("highlight")
+    );
+
     article.classList.add("highlight");
     article.scrollIntoView({ behavior: "smooth", block: "start" });
-    map.flyTo([item.lat, item.lng], 13, { animate: false });
+
+    map.flyTo([item.lat, item.lng], 13, { animate: true, duration: 1.2 });
+
     const marker = markerRefs.current[item.id];
-    if (marker) {
-      marker.openPopup();
-    }
+    if (marker) marker.openPopup();
   };
 
   const centerIcon = new Icon({
@@ -121,23 +130,24 @@ function Map({ isDoctor }) {
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   };
 
-  const sortedData = referencePoint
-    ? [...data].sort((a, b) => {
-        const distA = getDistance(
-          referencePoint.lat,
-          referencePoint.lng,
-          a.lat,
-          a.lng
-        );
-        const distB = getDistance(
-          referencePoint.lat,
-          referencePoint.lng,
-          b.lat,
-          b.lng
-        );
-        return distA - distB;
-      })
-    : data;
+  const sortedData = useMemo(() => {
+    if (!referencePoint) return filteredData;
+    return [...filteredData].sort((a, b) => {
+      const distA = getDistance(
+        referencePoint.lat,
+        referencePoint.lng,
+        a.lat,
+        a.lng
+      );
+      const distB = getDistance(
+        referencePoint.lat,
+        referencePoint.lng,
+        b.lat,
+        b.lng
+      );
+      return distA - distB;
+    });
+  }, [filteredData, referencePoint]);
   return (
     <div className="map-form-container">
       <div className="map-filters">
@@ -207,7 +217,7 @@ function Map({ isDoctor }) {
               </p>
 
               <a className="phone" href={`tel:${item.phone}`}>
-                <Phone width={20} height={20} fill="#C9A66B"/>
+                <Phone width={20} height={20} fill="#C9A66B" />
                 {item.phone}
               </a>
             </article>
@@ -223,7 +233,7 @@ function Map({ isDoctor }) {
               icon={item.type === "Centre d'imagerie" ? centerIcon : doctorIcon}
               ref={(el) => (markerRefs.current[item.id] = el)}
               key={item.id}
-              position={[item.lat, item.lng]}
+               position={[jitter(item.lat), jitter(item.lng)]}
               eventHandlers={{
                 click: () => scrollToItem(item.id),
               }}
