@@ -2,15 +2,14 @@ body {
   background-color: var(--color-pearl-white);
   /* background-color: var(--color-champagne-beige); */
   /* background-color: var(--color-sage-green); */
-  height: 100vh;
 }
 .main-container {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
     0 0px 1px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   max-width: 90%;
-  margin: 4rem auto;
-  padding: 3rem 4rem;
+  margin: 3rem auto 2rem;
+  padding: 2rem 4rem;
   background-color: white;
 }
 
@@ -44,7 +43,7 @@ body {
 }
 
 .leaflet-container {
-  height: 40rem;
+  height: 65vh;
   width: 100%;
 }
 button {
@@ -113,7 +112,7 @@ a.phone {
 }
 
 .category-filters {
-  margin: 2rem auto 1rem;
+  margin: 1rem auto;
   text-align: center;
 }
 
@@ -133,7 +132,7 @@ a.phone {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 40rem;
+  height: 65vh;
   overflow-y: scroll;
 
   min-width: fit-content;
@@ -201,4 +200,25 @@ a.phone {
 
 .leaflet-popup-content .name {
   font-weight: 600;
+}
+
+footer{
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+
+footer .credits a{
+ text-decoration: none;
+  font-weight: 400;
+  color: var(--color-midnight-blue);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+footer .credits a:hover{
+  color: var(--color-gold);
+
 }

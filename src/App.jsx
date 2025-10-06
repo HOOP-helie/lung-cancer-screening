@@ -58,6 +58,13 @@ function App() {
           ) : null} */}
         </div>
       </main>
+      <footer>
+         <div className="credits">
+           <a href="https://opheliehornn.com" target="_blank" rel="noopener">
+           © 2025 — Développement par Ophélie Hornn
+          </a>
+         </div>
+      </footer>
     </>
   );
 }
@@ -67,4 +74,6 @@ export default App;
   /* <a href="https://www.flaticon.com/free-icons/girl" title="girl icons">Girl icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/professions-and-jobs" title="professions and jobs icons">Professions and jobs icons created by Freepik - Flaticon</a> */
 }
-{/* <a href="https://www.flaticon.com/free-icons/unknown" title="unknown icons">Unknown icons created by Freepik - Flaticon</a> */}
+{
+  /* <a href="https://www.flaticon.com/free-icons/unknown" title="unknown icons">Unknown icons created by Freepik - Flaticon</a> */
+}
