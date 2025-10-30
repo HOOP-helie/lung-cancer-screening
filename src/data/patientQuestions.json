@@ -1,26 +1,67 @@
 [
   {
-    "id": "q1",
-    "text": "Vous avez entre 50 et 74 ans"
+    "id": "age",
+    "title": "1. Profil",
+      "subtitle": "Avez-vous entre 50 et 74 ans ?",
+    "options": [
+      { "label": "Oui", "value": 1 },
+      { "label": "Non", "value": 0 }
+    ]
   },
   {
-    "id": "q2",
-    "text": "Vous fumez 15 cigarettes par jour depuis plus de 25 ans, ou 1 paquet par jour depuis plus de 20 ans, ou 10 cigarettes/jour depuis plus de 30 ans"
+    "id": "smoking",
+    "title": "2. Votre profil tabagique",
+    "options": [
+      {
+        "label": "J’ai fumé ou je fume environ 15 cigarettes par jour depuis plus de 25 ans",
+        "value": 1
+      },
+      {
+        "label": "J’ai fumé ou je fume 1 paquet par jour depuis plus de 20 ans",
+        "value": 1
+      },
+      {
+        "label": "J’ai fumé ou je fume environ 10 cigarettes par jour depuis plus de 30 ans",
+        "value": 1
+      },
+      {
+        "label": "Aucune de ces situations",
+        "value": 0
+      }
+    ]
   },
   {
-    "id": "q3",
-    "text": "Vous avez arrêté de fumer depuis moins de 15 ans (avec les critères précédents)"
+    "id": "sevrage",
+    "title": "3. Sevrage tabagique",
+    "options": [
+      { "label": "Je fume encore actuellement", "value": 0 },
+      { "label": "J’ai arrêté de fumer depuis moins de 15 ans", "value": 0 },
+      { "label": "J’ai arrêté de fumer depuis plus de 15 ans", "value": -1 }
+    ]
   },
   {
-    "id": "q4",
-    "text": "Vous n’avez pas de symptômes"
+    "id": "symptomes",
+    "title": "4. Avez-vous actuellement des symptômes ?",
+    "subtitle": "Toux persistante, douleurs thoraciques, essoufflement inhabituel",
+    "options": [
+      { "label": "Oui", "value": -1 },
+      { "label": "Non", "value": 0 }
+    ]
   },
   {
-    "id": "q5",
-    "text": "Vous n’avez pas eu de scanner il y a moins d’un an"
+    "id": "scanner",
+    "title": "5. Avez-vous passé un scanner thoracique au cours des 12 derniers mois ?",
+    "options": [
+      { "label": "Oui", "value": -1 },
+      { "label": "Non", "value": 0 }
+    ]
   },
   {
-    "id": "q6",
-    "text": "Vous n’avez pas d’antécédent de cancer du poumon"
+    "id": "cancer",
+    "title": "6. Avez-vous déjà eu un cancer du poumon ?",
+    "options": [
+      { "label": "Oui", "value": -1 },
+      { "label": "Non", "value": 0 }
+    ]
   }
 ]

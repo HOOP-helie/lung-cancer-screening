@@ -39,23 +39,22 @@ function App() {
             </div>
             <button
               onClick={() => setStepNumber((stepNumber) => stepNumber + 1)}
-              disabled={isDoctor === null}
+              className={isDoctor === null ? "hidden" :""} 
             >
-              Voir l'annuaire
+              {isDoctor ? "Voir l'annuaire" : "Suivant"}
             </button>
           </div>
         )}
         <div>
-          {stepNumber > 0 ? <Map isDoctor={isDoctor} /> : null}
-          {/* {isProfessional && stepNumber > 0 ? <Map /> : null} */}
-          {/* {!isProfessional && stepNumber > 0 ? (
+          {/* {stepNumber > 0 ? <Map isDoctor={isDoctor} /> : null} */}
+          {isDoctor && stepNumber > 0 ? <Map  isDoctor={isDoctor}    setStepNumber={setStepNumber}
+/> : null}
+          {!isDoctor && stepNumber > 0 ? (
             <PatientForm
-              setPatientScore={setPatientScore}
               setStepNumber={setStepNumber}
-              patientScore={patientScore}
               stepNumber={stepNumber}
             />
-          ) : null} */}
+          ) : null}
         </div>
       </main>
       <footer>

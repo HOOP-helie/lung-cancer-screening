@@ -9,7 +9,7 @@ import Phone from "@/components/icons/Phone";
 import Location from "@/components/icons/Location";
 import { useRef, useState, useMemo } from "react";
 
-function Map({ isDoctor }) {
+function Map({ isDoctor = false, setStepNumber }) {
   const itemRefs = useRef({});
   const markerRefs = useRef({});
   const [map, setMap] = useState(null);
@@ -20,7 +20,7 @@ function Map({ isDoctor }) {
   const [referencePoint, setReferencePoint] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const jitter = (value) => value + (Math.random() - 0.5) * 0.0008; 
+  const jitter = (value) => value + (Math.random() - 0.5) * 0.0008;
   const filteredData = useMemo(() => {
     let datafilter = selectedType
       ? data.filter((d) => d.type === selectedType)
@@ -150,6 +150,14 @@ function Map({ isDoctor }) {
   }, [filteredData, referencePoint]);
   return (
     <div className="map-form-container">
+      {isDoctor == true ? (
+        <button
+          onClick={() => setStepNumber((stepNumber) => stepNumber - 1)}
+          // disabled={isDoctor === null}
+        >
+          Précédent
+        </button>
+      ) : null}
       <div className="map-filters">
         <div className="location-filters">
           <form onSubmit={recenterByPostalCode} className="postal-form">
@@ -233,7 +241,7 @@ function Map({ isDoctor }) {
               icon={item.type === "Centre d'imagerie" ? centerIcon : doctorIcon}
               ref={(el) => (markerRefs.current[item.id] = el)}
               key={item.id}
-               position={[jitter(item.lat), jitter(item.lng)]}
+              position={[jitter(item.lat), jitter(item.lng)]}
               eventHandlers={{
                 click: () => scrollToItem(item.id),
               }}

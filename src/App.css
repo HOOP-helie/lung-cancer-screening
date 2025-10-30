@@ -202,6 +202,32 @@ a.phone {
   font-weight: 600;
 }
 
+
+.form-screening .options-container{
+  display: flex;
+  gap: 1rem;
+} 
+
+.form-screening label{
+    cursor: pointer;
+    color:  var(--color-midnight-blue);
+    background-color: var(--color-champagne-beige);
+
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+    transition: 0.2s;
+    font-weight: 600;
+} 
+
+.form-screening label:hover{
+  color: var(--color-pearl-white);
+    background-color: var(--color-midnight-blue);
+
+} 
+
 footer{
   margin: auto;
   text-align: center;
