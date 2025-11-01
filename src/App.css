@@ -414,10 +414,11 @@ footer .credits a:hover {
 
   .directory-map-container{
     flex-direction: column-reverse;
+    padding: 1rem;
   }
 
   .leaflet-container{
-    height: 20rem;
+    height: 18rem;
   }
 
   .directory-map-container .directory-list article h3{
