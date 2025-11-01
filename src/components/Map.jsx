@@ -31,27 +31,57 @@ function Map({ isDoctor = false, setStepNumber }) {
 
   const scrollToItem = (id) => {
     const el = itemRefs.current[id];
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!el) return;
 
-      Object.values(itemRefs.current).forEach((element) => {
-        if (element) element.classList.remove("highlight");
+    const isMobile = window.innerWidth < 1024;
+    const container = document.querySelector(".directory-list");
+    const scrollTopAnchor =
+      document.querySelector(".scroll-top-anchor");
+
+    Object.values(itemRefs.current).forEach((element) =>
+      element?.classList?.remove("highlight")
+    );
+    el.classList.add("highlight");
+
+    /** To check */
+    /** Cancel scrollIntoView on mobile to avoid moving the page on article show up */
+    if (isMobile && container) {
+      scrollTopAnchor.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
-      el.classList.add("highlight");
+
+      container.scrollTop = el.offsetTop - container.offsetTop;
+    } else {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   const recenterMap = (item) => {
     const article = itemRefs.current[item.id];
-    if (!article) return; // Sécurité
-
+    if (!article) return; 
+    const isMobile = window.innerWidth < 1024; 
+    const container = document.querySelector(".directory-list");
+    const scrollTopAnchor =
+      document.querySelector(".scroll-top-anchor");
     Object.values(itemRefs.current).forEach((el) =>
       el?.classList?.remove("highlight")
     );
 
     article.classList.add("highlight");
-    article.scrollIntoView({ behavior: "smooth", block: "start" });
 
+    /** To check */
+    /** Cancel scrollIntoView on mobile to avoid moving the page on article show up */
+    if (isMobile && container) {
+      scrollTopAnchor.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      container.scrollTop = article.offsetTop - container.offsetTop;
+    } else {
+      article.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
     map.flyTo([item.lat, item.lng], 13, { animate: true, duration: 1.2 });
 
     const marker = markerRefs.current[item.id];
@@ -153,12 +183,16 @@ function Map({ isDoctor = false, setStepNumber }) {
       {isDoctor == true ? (
         <button
           onClick={() => setStepNumber((stepNumber) => stepNumber - 1)}
+          className="prev-btn"
+
           // disabled={isDoctor === null}
         >
-          Précédent
+          {"<< Précédent"}
         </button>
       ) : null}
       <div className="map-filters">
+      <span className="scroll-top-anchor"></span>
+
         <div className="location-filters">
           <form onSubmit={recenterByPostalCode} className="postal-form">
             <input
@@ -174,6 +208,7 @@ function Map({ isDoctor = false, setStepNumber }) {
             {isLoading ? "⏳ Recherche..." : "📍 Me géolocaliser"}
           </button>
         </div>
+
         {isDoctor && (
           <div className="category-filters">
             <label htmlFor="type-select">Afficher uniquement :</label>

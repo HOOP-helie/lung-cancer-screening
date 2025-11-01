@@ -28,7 +28,8 @@
         "label": "Aucune de ces situations",
         "value": 0
       }
-    ]
+    ],
+    "css": "flex-column"
   },
   {
     "id": "sevrage",
@@ -37,7 +38,9 @@
       { "label": "Je fume encore actuellement", "value": 0 },
       { "label": "J’ai arrêté de fumer depuis moins de 15 ans", "value": 0 },
       { "label": "J’ai arrêté de fumer depuis plus de 15 ans", "value": -1 }
-    ]
+    ],
+    "css": "flex-column"
+
   },
   {
     "id": "symptomes",

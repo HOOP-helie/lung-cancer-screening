@@ -13,6 +13,7 @@ function App() {
   // const [patientScore, setPatientScore] = useState(0);
   return (
     <>
+    <h1>Dépistage du cancer du poumon</h1>
       <main className="main-container">
         {stepNumber == 0 && (
           <div className="visitor-status-form">

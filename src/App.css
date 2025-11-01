@@ -12,6 +12,11 @@ body {
   padding: 2rem 4rem;
   background-color: white;
 }
+h1 {
+  text-align: center;
+  margin: 2rem auto 0;
+  font-size: 3rem;
+}
 
 .visitor-status-form {
   margin: auto;
@@ -20,9 +25,8 @@ body {
 }
 
 .visitor-status-form .avatar-container img {
-  margin:  auto;
+  margin: auto;
   height: 90px;
-  
 }
 
 .visitor-status-form p {
@@ -71,8 +75,7 @@ button:hover {
 input,
 select {
   margin: 0 0.4rem;
-  height: 2.2rem;
-  padding: 0.2rem 0.5rem;
+  height: 2rem;
 }
 
 input:focus,
@@ -93,12 +96,10 @@ a.phone {
   font-weight: 400;
   text-decoration: none;
   color: var(--color-gold);
-
 }
 /* a:hover  {
   color: var(--color-gold);
 } */
-
 
 .map-filters {
   margin-bottom: 1rem;
@@ -109,6 +110,7 @@ a.phone {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  margin-top: 1rem;
 }
 
 .category-filters {
@@ -172,6 +174,7 @@ a.phone {
   display: flex;
   gap: 0.2rem;
   align-items: center;
+  width: fit-content;
 }
 
 /* .directory-map-container .directory-list .phone:hover svg {
@@ -179,7 +182,7 @@ a.phone {
 } */
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .highlight,
@@ -202,49 +205,244 @@ a.phone {
   font-weight: 600;
 }
 
+/**______________ SCRENNING FORM ____________**/
+.form-screening-header {
+  margin-top: 1rem;
+  text-align: center;
+}
 
-.form-screening .options-container{
+.form-screening-header h2 {
+  font-size: 2rem;
+}
+.form-screening-header p {
+  font-size: 1.2rem;
+}
+
+.form-screening {
+  background-color: #f8f6f0;
+  padding: 1rem 1rem 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 50rem;
+  border-radius: 5%;
+}
+
+.form-screening h3 {
+  font-size: 1.8rem;
+}
+
+.form-screening .subtitle {
+  font-size: 1.5rem;
+}
+
+.form-screening label:hover {
+  color: var(--color-pearl-white);
+  background-color: var(--color-midnight-blue);
+}
+
+.form-screening .options-container {
+  margin: 1.5rem auto 0;
   display: flex;
   gap: 1rem;
-} 
+  justify-content: center;
+}
 
-.form-screening label{
-    cursor: pointer;
-    color:  var(--color-midnight-blue);
-    background-color: var(--color-champagne-beige);
+.form-screening .options-container.flex-column {
+  flex-direction: column;
+  width: fit-content;
+}
 
-    width: max-content;
-    display: flex;
-    align-items: center;
-    padding: 0.2rem 1rem;
-    border-radius: 20px;
-    transition: 0.2s;
-    font-weight: 600;
-} 
+.form-screening .options-container.flex-column label {
+  font-size: 1.1rem;
+}
 
-.form-screening label:hover{
+.form-screening label {
+  cursor: pointer;
+  color: var(--color-midnight-blue);
+  background-color: var(--color-champagne-beige);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.form-screening label:hover {
   color: var(--color-pearl-white);
-    background-color: var(--color-midnight-blue);
+  background-color: var(--color-midnight-blue);
+}
 
-} 
+.form-screening label input[type="radio"] {
+  accent-color: var(--color-gold);
+}
+.form-screening label:has(input[type="radio"]:checked) {
+  background-color: var(--color-midnight-blue);
+  color: white;
+}
+.form-screening .anonymous-form-info {
+  margin-top: 1rem;
+}
 
-footer{
+.form-screening .question-block {
+  margin: auto;
+  text-align: center;
+}
+
+.form-screening .question-block .question-content {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-screening .question-block .question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 15rem;
+}
+
+.form-screening .question-block button {
+  display: inline-block;
+  margin-left: auto;
+  margin-top: 3rem;
+}
+
+.form-screening .non-eligible-results,
+.form-screening .eligible-results {
+  font-size: 1.1rem;
+  font-weight: 500;
+  width: 90%;
+  margin: auto;
+}
+
+.form-screening .non-eligible-results p {
+  margin: 2rem auto 1rem;
+}
+
+.form-screening .eligible-results p {
+  margin: 1rem auto;
+}
+
+.prev-btn,
+.next-btn {
+  background: none;
+  color: var(--color-midnight-blue);
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: none;
+  color: var(--color-gold);
+}
+
+footer {
   margin: auto;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-
-
-footer .credits a{
- text-decoration: none;
+footer .credits a {
+  text-decoration: none;
   font-weight: 400;
   color: var(--color-midnight-blue);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-style: italic;
 }
 
-footer .credits a:hover{
+footer .credits a:hover {
   color: var(--color-gold);
+}
 
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .form-screening  {
+   width: 100%;
+  }
+  .form-screening-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-screening-header p {
+    font-size: 1rem;
+  }
+
+  .form-screening .question-content h3 {
+    font-size: 1.2rem;
+  }
+
+    .form-screening .question-content  p {
+    font-size: 1.2rem;
+  }
+
+      .form-screening .question-content  .options-container label {
+    font-size: 1rem;
+  }
+  .visitor-status-form p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .visitor-status-form--answers {
+    font-size: 1.2rem;
+  }
+
+  
+  .form-screening .non-eligible-results,
+.form-screening .eligible-results {
+  font-size: 1rem;
+}
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    max-width: 95%;
+    margin-top: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+  .map-filters .location-filters {
+    margin: 1rem auto;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .category-filters {
+    margin-top: 2rem;
+  }
+
+  .directory-map-container{
+    flex-direction: column-reverse;
+  }
+
+  .leaflet-container{
+    height: 20rem;
+  }
+
+  .directory-map-container .directory-list article h3{
+    font-size: 1rem;
+  }
+
+}
+
+.question-block {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* empêche le clic sur les questions masquées */
+  position: absolute; /* les superpose (optionnel selon ton layout) */
+  width: 100%;
+}
+
+.question-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.question-block.hidden {
+  opacity: 0;
+  transform: translateY(10px);
 }
