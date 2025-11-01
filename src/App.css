@@ -300,7 +300,7 @@ a.phone {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 15rem;
+  min-height: 12rem;
 }
 
 .form-screening .question-block button {
