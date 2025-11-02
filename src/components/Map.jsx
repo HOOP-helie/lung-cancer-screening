@@ -35,8 +35,7 @@ function Map({ isDoctor = false, setStepNumber }) {
 
     const isMobile = window.innerWidth < 1024;
     const container = document.querySelector(".directory-list");
-    const scrollTopAnchor =
-      document.querySelector(".scroll-top-anchor");
+    const scrollTopAnchor = document.querySelector(".scroll-top-anchor");
 
     Object.values(itemRefs.current).forEach((element) =>
       element?.classList?.remove("highlight")
@@ -59,11 +58,10 @@ function Map({ isDoctor = false, setStepNumber }) {
 
   const recenterMap = (item) => {
     const article = itemRefs.current[item.id];
-    if (!article) return; 
-    const isMobile = window.innerWidth < 1024; 
+    if (!article) return;
+    const isMobile = window.innerWidth < 1024;
     const container = document.querySelector(".directory-list");
-    const scrollTopAnchor =
-      document.querySelector(".scroll-top-anchor");
+    const scrollTopAnchor = document.querySelector(".scroll-top-anchor");
     Object.values(itemRefs.current).forEach((el) =>
       el?.classList?.remove("highlight")
     );
@@ -106,6 +104,7 @@ function Map({ isDoctor = false, setStepNumber }) {
   const recenterByPostalCode = async (e) => {
     e.preventDefault();
     if (!postalCode) return;
+    const container = document.querySelector(".directory-list");
 
     try {
       const res = await fetch(
@@ -115,6 +114,8 @@ function Map({ isDoctor = false, setStepNumber }) {
       if (data.length > 0) {
         const { lat, lon } = data[0];
         map.flyTo([parseFloat(lat), parseFloat(lon)], 11, { duration: 1.2 });
+        setReferencePoint({ lat: parseFloat(lat), lng: parseFloat(lon) });
+        container.scrollTop = -container.offsetTop;
       } else {
         alert("Code postal introuvable");
       }
@@ -129,6 +130,7 @@ function Map({ isDoctor = false, setStepNumber }) {
       return;
     }
     setIsLoading(true);
+    const container = document.querySelector(".directory-list");
 
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -138,6 +140,7 @@ function Map({ isDoctor = false, setStepNumber }) {
           map.flyTo([latitude, longitude], 12, { duration: 1.5 });
           setIsLoading(false);
         }
+        container.scrollTop = -container.offsetTop;
       },
       (err) => {
         console.error("Erreur géolocalisation:", err);
@@ -191,7 +194,7 @@ function Map({ isDoctor = false, setStepNumber }) {
         </button>
       ) : null}
       <div className="map-filters">
-      <span className="scroll-top-anchor"></span>
+        <span className="scroll-top-anchor"></span>
 
         <div className="location-filters">
           <form onSubmit={recenterByPostalCode} className="postal-form">
