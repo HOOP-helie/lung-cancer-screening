@@ -90,7 +90,7 @@ function PatientForm({ setStepNumber, stepNumber }) {
           (score < 2 ? (
             <div className="non-eligible-results">
               <p>
-                Le dépistage organisé du cancer colorectal ne vous est pas
+                Le dépistage organisé du cancer du poumon ne vous est pas
                 encore recommandé.{" "}
               </p>
               <p>
